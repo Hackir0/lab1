@@ -1,12 +1,22 @@
-string = "fefwef"
-numberOfVowels = 0
-numberOfConsonants = 0
-for i in string:
-    if (i == 'a' or i == 'A' or 'i' or 'I' or
-            i == 'e' or i == 'E' or i == 'y' or i == 'Y'
-            or i == 'o' or i == 'O' or i == 'u' or i == 'U'):
-        numberOfVowels += 1
-    else:
-        numberOfConsonants += 1
+text = input( "Введите текст: ")
+vowels = ['a','e','i','o','u']
+vowelCount = 0
+consonantCount = 0
+vowelList = []
+for char in text:
+    if char.isalpha():
+        if char.lower() in vowels:
+            vowelCount+=1
+            if char.lower() not in vowelList:
+                vowelList.append(char.lower())
+            else :
+                consonantCount +=1
 
-print("Гласные = ", numberOfVowels, "Согласные", numberOfConsonants)
+if vowelCount == consonantCount:
+    print("Гласные буквы: ",vowelList)
+else:
+    print("Количество гласых букв: ", vowelCount)
+    print ( "Количество согласных букв:", consonantCount)
+
+wordCount = len(text.split())
+print("Количество слов в текте: ", wordCount)
